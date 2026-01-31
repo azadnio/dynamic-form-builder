@@ -9,7 +9,7 @@ import { MatInput } from '@angular/material/input';
   template: `
     <mat-form-field class="w-full">
       <mat-label>{{field().label}}</mat-label>
-      <input matInput [type]="field().inputType || 'text'" [required]="field().required" />
+      <input matInput [type]="field().inputType || 'text'" [required]="field().required" [placeholder]="field().placeholder || ''" />
     </mat-form-field>
   `,
   styles: ``,

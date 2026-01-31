@@ -5,7 +5,20 @@ export interface IFieldTypeDefinition {
   label: string;
   icon: string;
   defaultConfig: any;
+  settingsConfig: IFieldSettingsDefinition[];
   component: Type<unknown>
+}
+
+export interface IFieldSettingsDefinition {
+  label: string;
+  type: 'text' | 'checkbox' | 'select' | 'number' | 'radio' | 'dynamic-options';
+  key: string;
+  options?: IOptionItem[];
+}
+
+export interface IOptionItem {
+  label: string;
+  value: string;
 }
 
 export interface IFormField {
@@ -14,5 +27,7 @@ export interface IFormField {
   label: string;
   required: boolean;
   inputType?: string;
+  placeholder?: string;
+  options?: IOptionItem[];
 }
 

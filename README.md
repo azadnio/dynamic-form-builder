@@ -89,12 +89,91 @@ npm test
 
 ## Architecture
 
-The application follows Angular best practices with:
+This project is organized so new contributors can quickly map features to folders and understand how data moves through the UI. The app is a single-page Angular application built from standalone components, with feature folders that keep UI, behavior, and models grouped together.
 
-- **Standalone Components**: Modern Angular component architecture
-- **Signal-based State Management**: Reactive data binding using Angular signals
-- **Service-based Architecture**: Separation of concerns with injectable services
-- **Modular Design**: Components organized by feature for scalability
+**Core ideas**
+
+- **Standalone components** provide isolated, reusable UI building blocks.
+- **Services** hold shared state and operations so components stay focused on presentation.
+- **Signals** drive reactive updates whenever form or field state changes.
+- **Feature folders** keep related components together for easy navigation.
+
+### Application Structure
+
+```
+src/app/
+├── app.ts                        # Root component
+├── app.config.ts                 # Application configuration & providers
+├── app.routes.ts                 # Route definitions
+│
+├── components/                   # Feature components
+│   ├── main-canvas/              # Primary editor container
+│   │   ├── main-canvas.ts        # Main canvas component
+│   │   ├── form-editor/          # Form editing interface
+│   │   │   └── form-editor.ts
+│   │   ├── form-preview/         # Real-time form preview
+│   │   │   └── form-preview.ts
+│   │   ├── form-field/           # Individual field renderer
+│   │   │   └── form-field.ts
+│   │   └── field-preview/        # Field preview in editor
+│   │       └── field-preview.ts
+│   │
+│   ├── form-elements-menu/       # Field type selector
+│   │   ├── form-elements-menu.ts
+│   │   └── field-button/         # Individual field type button
+│   │       └── field-button.ts
+│   │
+│   ├── field-settings/           # Property configuration panel
+│   │   └── field-settings.ts
+│   │
+│   ├── field-types/              # Reusable field components
+│   │   ├── text-field/
+│   │   │   └── text-field.ts
+│   │   ├── checkbox-field/
+│   │   │   └── checkbox-field.ts
+│   │   ├── select-field/
+│   │   │   └── select-field.ts
+│   │   └── [custom fields]
+│   │
+│   └── dynamic-options/          # Dynamic field options UI
+│       └── dynamic-options.ts
+│
+├── models/                       # Data models & interfaces
+│   ├── field.ts                  # Field interface & type definitions
+│   └── form.ts                   # Form interface & structure
+│
+├── services/                     # Business logic & state management
+│   ├── field-types.ts            # Field type registry & metadata
+│   ├── form.ts                   # Form state & operations
+│   └── [additional services]
+│
+├── public/                       # Static assets
+└── styles.css                    # Global styles
+```
+
+### Component Responsibilities
+
+- **Main Canvas**: Orchestrates the editor layout and coordinates child components.
+- **Form Editor**: Owns the form structure and manages add/remove/reorder actions.
+- **Form Elements Menu**: Lists available field types and triggers insert actions.
+- **Field Settings**: Edits properties of the currently selected field.
+- **Field Preview / Form Preview**: Renders live output of the current form state.
+- **Field Type Components**: Encapsulate rendering and behavior for each field type.
+
+### Data & Interaction Flow
+
+1. A user action (drag-and-drop, click, edit) is captured in a component.
+2. The component calls a method on a service (for example, the form service).
+3. The service updates state using Angular signals.
+4. Any component consuming those signals updates automatically.
+5. The preview components re-render to reflect the new form state.
+
+### Styling Strategy
+
+- **Tailwind CSS** provides layout and utility styling for rapid iteration.
+- **Angular Material** supplies accessible UI components and consistent theming.
+- **material-theme.scss** defines Material design tokens.
+- **styles.css** contains global styles and app-wide overrides.
 
 ## Learn More
 

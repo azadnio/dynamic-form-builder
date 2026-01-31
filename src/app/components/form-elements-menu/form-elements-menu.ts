@@ -13,6 +13,7 @@ import { CdkDropList } from '@angular/cdk/drag-drop';
         cdkDropList
         cdkDropListSortingDisabled="true"
         cdkDropListData="field-selector"
+        [cdkDropListEnterPredicate]="noDropAllowed()"
       >
         @for (item of fieldTypes; track item.type) {
           <app-field-button [field]="item"/>
@@ -27,4 +28,8 @@ export class FormElementsMenu {
   fieldTypesService = inject(FieldTypes);
 
   fieldTypes = this.fieldTypesService.getAllFieldTypes();
+
+  noDropAllowed() {
+    return () => false;
+  }
 }
