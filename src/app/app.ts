@@ -1,13 +1,28 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { FormElementsMenu } from "./components/form-elements-menu/form-elements-menu";
+import { MainCanvas } from "./components/main-canvas/main-canvas";
+import { FieldSettings } from "./components/field-settings/field-settings";
+import { CdkDropListGroup } from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, FormElementsMenu, MainCanvas, FieldSettings, CdkDropListGroup],
   template: `
-    <h1>Hello, {{ title() }}</h1>
+    <div class="flex flex-col h-screen bg-gray-100 px-4">
+      <div class="flex flex-col gap-1 items-center justify-center py-10">
+        <h1 class="text-2xl tracking-wide font-medium">Angular Forms Designer</h1>
+        <p class="text-gray-600">
+          Create beautiful, responsive forms with Angular Material and Tailwind CSS.
+        </p>
+      </div>
 
-    <router-outlet />
+      <div class="flex gap-4" cdkDropListGroup>
+        <app-form-elements-menu class="w-64"/>
+        <app-main-canvas class="flex-1"/>
+        <app-field-settings class="w-64"/>
+      </div>
+    </div>
   `,
   styles: [],
 })
