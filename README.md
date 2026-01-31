@@ -1,59 +1,101 @@
-# DynamicFormBuilder
+# Angular Forms Designer
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.1.
+A dynamic form builder application built with **Angular 21**, **Angular Material**, **Tailwind CSS**, and **CDK Drag & Drop**. This tool allows users to visually design forms by dragging and dropping field components, configuring their properties, and generating responsive, accessible forms.
 
-## Development server
+Live app: [Dynamic form builder](https://azadnio.github.io/dynamic-form-builder/)
 
-To start a local development server, run:
+## Features
+
+- **Visual Form Designer**: Drag-and-drop interface to design forms without writing code
+- **Dynamic Field Types**: Support for multiple field types (Text Fields, Checkboxes, etc.)
+- **Real-time Configuration**: Edit field properties in a side panel
+- **Angular Material Integration**: Use Material components for professional UI
+- **Tailwind CSS Styling**: Modern, responsive design with Tailwind CSS
+- **Accessible Design**: Built with accessibility best practices
+- **Component-based Architecture**: Modular, maintainable codebase
+
+## Project Structure
+
+```
+src/app/
+├── components/
+│   ├── field-settings/           # Panel for configuring field properties
+│   ├── field-types/              # Reusable field type components
+│   │   ├── text-field/
+│   │   └── checkbox-field/
+│   ├── form-elements-menu/       # Available field types menu
+│   └── main-canvas/              # Main form editor area
+├── models/                        # TypeScript interfaces
+│   ├── field.ts                  # Form field definitions
+│   └── form.ts                   # Form structure models
+└── services/                      # Application services
+    ├── field-types.ts            # Field type registry
+    └── form.ts                   # Form management logic
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm 10.9.2+
+- Angular CLI 21.1.1+
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## Development
+
+To start a local development server:
 
 ```bash
-ng serve
+npm start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
 ## Building
 
-To build the project run:
+To build the project for production:
 
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The build artifacts will be stored in the `dist/` directory. The production build optimizes the application for performance and speed.
 
-## Running unit tests
+## Testing
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+To execute unit tests using Vitest:
 
 ```bash
-ng test
+npm test
 ```
 
-## Running end-to-end tests
+## Technologies Used
 
-For end-to-end (e2e) testing, run:
+- **Angular 21** - Frontend framework
+- **Angular Material** - UI component library
+- **Angular CDK** - Drag-and-drop functionality
+- **Tailwind CSS** - Utility-first CSS framework
+- **TypeScript** - Programming language
+- **RxJS** - Reactive programming library
+- **Vitest** - Unit testing framework
 
-```bash
-ng e2e
-```
+## Architecture
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The application follows Angular best practices with:
 
-## Additional Resources
+- **Standalone Components**: Modern Angular component architecture
+- **Signal-based State Management**: Reactive data binding using Angular signals
+- **Service-based Architecture**: Separation of concerns with injectable services
+- **Modular Design**: Components organized by feature for scalability
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Learn More
+
+For more information about Angular, visit the [Angular Documentation](https://angular.dev).
