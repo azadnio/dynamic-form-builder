@@ -1,22 +1,22 @@
-
 // Include theming for Angular Material with `mat.theme()`.
 // This Sass mixin will define CSS variables that are used for styling Angular Material
 // components according to the Material 3 design spec.
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
+@import './app/themes/greentheme.css';
 
-html {
-  height: 100%;
-  @include mat.theme((
-    color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
-}
+// html {
+//   height: 100%;
+//   @include mat.theme((
+//     color: (
+//       primary: mat.$azure-palette,
+//       tertiary: mat.$blue-palette,
+//     ),
+//     typography: Roboto,
+//     density: 0,
+//   ));
+// }
 
 body {
   // Default the application to a light color theme. This can be changed to
@@ -34,4 +34,40 @@ body {
   // Reset the user agent margin.
   margin: 0;
   height: 100%;
+}
+
+.compact-button {
+  @include mat.button-overrides(
+    (
+      filled-container-height: 36px,
+      filled-container-shape: 5px,
+    )
+  );
+}
+
+mat-button-toggle-group {
+  @include mat.button-toggle-overrides(
+    (
+      shape: 5px,
+      height: 36px,
+      selected-state-background-color: var(--mat-sys-primary),
+      selected-state-text-color: var(--mat-sys-on-primary),
+    )
+  );
+}
+
+mat-form-field {
+  @include mat.theme(
+    (
+      density: -3,
+    )
+  );
+}
+
+mat-form-field.select {
+  @include mat.theme(
+    (
+      density: -5,
+    )
+  );
 }

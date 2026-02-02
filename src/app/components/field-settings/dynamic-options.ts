@@ -20,7 +20,7 @@ import { MatInput } from '@angular/material/input';
       <div class="flex flex-col gap-2 mb-4 mt-2">
         @for(option of options(); track option.value; let i = $index) {
           <div class="flex items-center ">
-            <mat-form-field class="flex-1 compact">
+            <mat-form-field class="flex-1 compact select">
               <input matInput placeholder="Option Label" [(ngModel)]="option.label" (ngModelChange)="updateOption(i, $event)"/>
             </mat-form-field>
             <button mat-icon-button (click)="removeOption(i)">

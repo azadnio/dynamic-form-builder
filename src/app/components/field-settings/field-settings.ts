@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { MatCheckbox } from "@angular/material/checkbox";
 import { MatOption } from '@angular/material/autocomplete';
 import { MatSelect } from '@angular/material/select';
-import { DynamicOptions } from "../dynamic-options/dynamic-options";
+import { DynamicOptions } from "./dynamic-options";
 
 @Component({
   selector: 'app-field-settings',
@@ -15,7 +15,7 @@ import { DynamicOptions } from "../dynamic-options/dynamic-options";
   template: `
     <div class="p-4 bg-white rounded-lg h-[calc(100vh-150px)] overflow-y-auto border-gray-200 shadow-sm">
       @if(formsService.selectedField(); as selectedField) {
-        <h3 class="text-xl font-medium mb-6">Field Properties</h3>
+        <h3 class="text-xl font-medium mb-6 text-primary ">Field Properties</h3>
         <div class="flex flex-col gap-6">
           @for(setting of fieldSettings(); track setting.key) {
 

@@ -12,14 +12,14 @@ import { Form } from '../../services/form';
   template: `
     <div class="p-4 bg-white rounded-lg h-[calc(100vh-150px)] overflow-y-auto border-gray-200 shadow-sm">
       <div class="pb-4 border-b border-gray-200 flex gap-2 items-center">
-        <h3 class="text-xl font-medium">Form Canvas</h3>
-        <mat-button-toggle-group [(value)]="activeTab" hideSingleSelectionIndicator="true" >
+        <h3 class="text-xl font-medium text-primary">Form Canvas</h3>
+        <mat-button-toggle-group [(value)]="activeTab" hideSingleSelectionIndicator="true" class="border-primary!" >
             <mat-button-toggle value="editor"> Editor </mat-button-toggle>
             <mat-button-toggle value="preview"> Preview </mat-button-toggle>
         </mat-button-toggle-group>
         @if(activeTab() === 'editor') {
           <div class="flex-1"></div>
-          <button mat-flat-button (click)="formService.addRow()">
+          <button mat-flat-button (click)="formService.addRow()" class="compact-button">
             Add Row 
             <mat-icon>add_circle</mat-icon>
           </button>
@@ -33,7 +33,8 @@ import { Form } from '../../services/form';
       }
     </div>
   `,
-  styles: ``,
+  styles: `
+  `,
 })
 export class MainCanvas {
   formService = inject(Form);

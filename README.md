@@ -20,6 +20,7 @@ Live app: [Dynamic form builder](https://azadnio.github.io/dynamic-form-builder/
 src/app/
 ├── components/
 │   ├── field-settings/           # Panel for configuring field properties
+│   │   └── dynamic-options.ts     # Dynamic field options editor
 │   ├── field-types/              # Reusable field type components
 │   │   ├── text-field/
 │   │   └── checkbox-field/
@@ -124,7 +125,8 @@ src/app/
 │   │       └── field-button.ts
 │   │
 │   ├── field-settings/           # Property configuration panel
-│   │   └── field-settings.ts
+│   │   ├── field-settings.ts
+│   │   └── dynamic-options.ts    # Dynamic options editor (moved here)
 │   │
 │   ├── field-types/              # Reusable field components
 │   │   ├── text-field/
@@ -134,9 +136,6 @@ src/app/
 │   │   ├── select-field/
 │   │   │   └── select-field.ts
 │   │   └── [custom fields]
-│   │
-│   └── dynamic-options/          # Dynamic field options UI
-│       └── dynamic-options.ts
 │
 ├── models/                       # Data models & interfaces
 │   ├── field.ts                  # Field interface & type definitions
