@@ -22,7 +22,8 @@ export class Form {
   constructor() {
     this._rows.set([{
       id: crypto.randomUUID(),
-      fields: []
+      fields: [],
+      borderBottom: false
     }]);
   }
 
@@ -93,7 +94,8 @@ export class Form {
 
     const newRow: FormRow = {
       id: crypto.randomUUID(),
-      fields: []
+      fields: [],
+      borderBottom: false
     };
 
     startViewTransition(() => {

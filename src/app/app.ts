@@ -1,5 +1,4 @@
 import { Component, inject, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { FormElementsMenu } from "./components/form-elements-menu/form-elements-menu";
 import { MainCanvas } from "./components/main-canvas/main-canvas";
 import { FieldSettings } from "./components/field-settings/field-settings";
@@ -10,7 +9,7 @@ import { ExportForm } from './services/download-form';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormElementsMenu, MainCanvas, FieldSettings, CdkDropListGroup, MatIcon, MatAnchor],
+  imports: [ FormElementsMenu, MainCanvas, FieldSettings, CdkDropListGroup, MatIcon, MatAnchor],
   template: `
     <div class="flex flex-col h-screen bg-background px-4">
       <div class="flex flex-col gap-1 items-center justify-center py-10">

@@ -30,5 +30,11 @@ export interface IFormField {
   inputType?: string;
   placeholder?: string;
   options?: IOptionItem[];
+  orientation?: 'vertical' | 'horizontal';
+  alignment?: 'left' | 'center' | 'right';
+  sectionHeading?: string;
+  sectionDescription?: string;
+  includeCancelButton?: boolean;
+  value?: string | number
 }
 

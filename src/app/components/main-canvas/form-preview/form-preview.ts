@@ -22,4 +22,5 @@ import { FieldPreview } from "../field-preview/field-preview";
 })
 export class FormPreview {
   formService = inject(Form);
+  hasBorder() {return true}
 }
