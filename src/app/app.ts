@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, DOCUMENT, inject, signal } from '@angular/core';
 import { FormElementsMenu } from "./components/form-elements-menu/form-elements-menu";
 import { MainCanvas } from "./components/main-canvas/main-canvas";
 import { FieldSettings } from "./components/field-settings/field-settings";
@@ -17,6 +17,7 @@ import { ExportForm } from './services/download-form';
         <p class="text-on-background">
           Create beautiful, responsive forms with Angular Material and Tailwind CSS.
         </p>
+        <mat-icon (click)="toggleTheme()" class="cursor-pointer hover:scale-110 transition-all duration-300 text-primary!">{{ isLigthMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
       </div>
 
       <div class="flex gap-4 relative" cdkDropListGroup>
@@ -34,4 +35,11 @@ import { ExportForm } from './services/download-form';
 })
 export class App {
   formExportService = inject(ExportForm);
+  isLigthMode = signal(true);
+  document = inject(DOCUMENT);
+
+  toggleTheme() {
+    this.isLigthMode.set(!this.isLigthMode());
+    this.document.body.classList.toggle('dark', !this.isLigthMode());
+  }
 }

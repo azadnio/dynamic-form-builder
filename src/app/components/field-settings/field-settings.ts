@@ -13,7 +13,7 @@ import { DynamicOptions } from "./dynamic-options";
   selector: 'app-field-settings',
   imports: [MatFormField, MatLabel, MatInput, FormsModule, MatCheckbox, MatOption, MatSelect, DynamicOptions],
   template: `
-    <div class="p-4 bg-white rounded-lg h-[calc(100vh-150px)] overflow-y-auto border-gray-200 shadow-sm">
+    <div class="p-4 bg-surface-container-lowest rounded-lg h-[calc(100vh-150px)] overflow-y-auto border-gray-200 shadow-sm">
       @if(formsService.selectedField(); as selectedField) {
         <h3 class="text-xl font-medium mb-6 text-primary ">Field Properties</h3>
         <div class="flex flex-col gap-6">

@@ -19,7 +19,7 @@ import { MatIcon } from '@angular/material/icon';
           (cdkDropListDropped)="onDrop($event, row.id)"
           [cdkDropListOrientation]="'mixed'"
           [style.view-transition-name]="'row-' + row.id"
-          class="p-5 pt-2 ps-10 relative bg-white rounded-lg border-2 border-dashed border-gray-200 mb-4"
+          class="p-5 pt-2 ps-10 relative rounded-lg border-2 border-dashed border-gray-200 mb-4"
         >
 
           <div class="absolute left-0 gap-0 flex flex-col top-1/2 -translate-y-1/2">
@@ -41,7 +41,7 @@ import { MatIcon } from '@angular/material/icon';
             @for(field of row.fields; track field.id) {
               <app-form-field cdkDrag [cdkDragData]="field" [field]="field" class="flex-1" [style.view-transition-name]="'field-' + field.id"/>              
             } @empty {
-              <div class="w-full bg-background p-4 border border-dashed border-primary-container rounded-lg text-gray-400 text-center">
+              <div class="w-full bg-secondary-container p-4 border border-dashed border-primary-container rounded-lg text-gray-400 text-center">
                 Drag and drop form elements here
               </div>
             }

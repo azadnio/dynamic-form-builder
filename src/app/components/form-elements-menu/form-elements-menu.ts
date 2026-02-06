@@ -7,7 +7,7 @@ import { CdkDropList } from '@angular/cdk/drag-drop';
   selector: 'app-form-elements-menu',
   imports: [FieldButton, CdkDropList],
   template: `
-    <div class="p-4 bg-white rounded-lg h-[calc(100vh-150px)] overflow-y-auto border-gray-200 shadow-sm">
+    <div class="p-4 bg-surface-container-lowest rounded-lg h-[calc(100vh-150px)] overflow-y-auto border-gray-200 shadow-sm">
       <h3 class="text-xl font-medium mb-4 text-primary">Form Elements</h3>
       <div class="flex flex-col gap-2 elements-menu" 
         cdkDropList

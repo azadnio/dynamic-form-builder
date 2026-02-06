@@ -10,8 +10,8 @@ import { FieldPreview } from "../field-preview/field-preview";
   selector: 'app-form-field',
   imports: [TitleCasePipe, MatIconButton, MatIcon, FieldPreview],
   template: `
-    <div class="bg-white p-4 pt-1 rounded-lg shadow-sm border border-gray-200 hover:border-primary cursor-pointer"
-      [class]="formService.selectedField()?.id === field().id ? 'border-primary! shadow-md bg-background!' : ''"
+    <div class=" p-4 pt-1 rounded-lg shadow-sm border border-gray-200 hover:border-primary cursor-pointer"
+      [class]="formService.selectedField()?.id === field().id ? 'bg-primary-container! shadow-md' : ''"
       (click)="formService.setSelectedField(field().id)"
       >
       <div class="flex items-center justify-between mb-1">

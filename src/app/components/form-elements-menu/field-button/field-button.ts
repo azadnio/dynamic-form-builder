@@ -12,7 +12,7 @@ import { CdkDrag, CdkDragPlaceholder } from '@angular/cdk/drag-drop';
       [cdkDragData]="field()"
       (cdkDragStarted)="isDaragging.set(true)"
       (cdkDragEnded)="isDaragging.set(false)"
-      class="w-full flex items-center gap-2 p-2 mb-2 rounded-lg border border-gray-200 hover:border-primary hover:bg-gray-50 hover:shadow-sm cursor-pointer transition-shadow"
+      class="w-full flex items-center gap-2 p-2 mb-2 rounded-lg border border-gray-200 hover:border-primary hover:bg-surface-variant hover:shadow-sm cursor-pointer transition-shadow"
       type="button"
     >
       <div class="bg-primary-container rounded-md p-1 flex items-center justify-center">
@@ -23,7 +23,7 @@ import { CdkDrag, CdkDragPlaceholder } from '@angular/cdk/drag-drop';
     </button>
 
     @if(isDaragging()) {
-      <div class="w-full flex items-center gap-2 p-2 mb-2 rounded-lg border border-gray-200 bg-white shadow-lg">
+      <div class="w-full flex items-center gap-2 p-2 mb-2 rounded-lg border border-gray-200 bg-primary-container shadow-lg">
         <div class="bg-primary-container rounded-md p-1 flex items-center justify-center"> 
           <mat-icon aria-hidden="true" class="text-primary! scale-75">{{ field().icon }}</mat-icon>
         </div>

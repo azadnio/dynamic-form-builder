@@ -63,8 +63,11 @@
     --color-shadow: var(--mat-sys-shadow);
 }
 
-.cdk-drop-list-dragging:not(.elements-menu) {
-    border: 2px solid lightgray !important;
-    background-color: lightgray !important;
-    transition: all 0.1s ease-in-out;
+:root {
+    /* color-scheme: light dark; */
 }
+
+body.dark {
+    color-scheme: dark;
+}
+

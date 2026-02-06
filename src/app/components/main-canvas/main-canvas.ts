@@ -10,7 +10,7 @@ import { Form } from '../../services/form';
   selector: 'app-main-canvas',
   imports: [FormEditor, MatButtonToggle, MatButtonToggleGroup, FormPreview, MatAnchor, MatIcon],
   template: `
-    <div class="p-4 bg-white rounded-lg h-[calc(100vh-150px)] overflow-y-auto border-gray-200 shadow-sm">
+    <div class="p-4 bg-surface-container-lowest rounded-lg h-[calc(100vh-150px)] overflow-y-auto border-gray-200 shadow-sm">
       <div class="pb-4 border-b border-gray-200 flex gap-2 items-center">
         <h3 class="text-xl font-medium text-primary">Form Canvas</h3>
         <mat-button-toggle-group [(value)]="activeTab" hideSingleSelectionIndicator="true" class="border-primary!" >
